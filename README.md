@@ -40,9 +40,11 @@ Connect to the Raspberry Pi via SSH:
   - Open your terminal, and run the command ssh [username]@IP_ADDRESS
   - Type your password, press enter. You should see your username in green if successfully connected
 Install the required libraries for LoRa communication:
+```bash
 sudo apt update
 sudo apt install python3-pip
 pip3 install lora-python-lib
+```
 
 
 
