@@ -1,0 +1,6 @@
+The structure of the Gateway is as it follow: 
+  1. Raspberry Pi 5
+  2. LoRa HAT SX1262 
+  3. Power supply for remote applications
+
+Setup:
