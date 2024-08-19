@@ -46,5 +46,11 @@ sudo apt install python3-pip
 pip3 install lora-python-lib
 ```
 
+Step 2: LoRa HAT Setup
+Attach the SX1262 LoRa HAT onto the Raspberry Pi GPIO pins as per the manufacturer's documentation.
+  - In my case, I attached the LoRa using jumper cables (female to male), but maybe it is different for your model of the module.
+  - Connect the jumper cables to ensure stable communication between the Pi and the HAT.
+  - If the light on the module is blinking, or solid red, it means the module was successfully connected.
+
 
 
