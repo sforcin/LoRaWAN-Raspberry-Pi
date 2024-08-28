@@ -1,5 +1,5 @@
 # LoRaWAN-Raspberry-Pi
-This repository contains the project specifications and setup instructions for building a mobile LoRaWAN Gateway using a Raspberry Pi 5 and an SX1262 LoRa HAT. This gateway is mounted on a DJI Mini Pro 4 drone to collect data from LoRa-enabled sensors across large agricultural fields.
+This repository contains the project specifications and setup instructions for building a mobile LoRaWAN Gateway using a Raspberry Pi 5 and an SX1262 LoRa HAT. This gateway is mounted on a 3DR SOLO drone to collect data from LoRa-enabled sensors across large agricultural fields.
 
 This project is part of the USDA Digital Agriculture Fellowship, in collaboration with the University of California, Riverside, Department of Electrical and Computer Engineering.
 
