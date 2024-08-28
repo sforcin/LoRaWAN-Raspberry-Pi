@@ -1,6 +1,10 @@
-The structure of the Gateway is as it follow: 
-  1. Raspberry Pi 5
-  2. LoRa HAT SX1262 
-  3. Power supply for remote applications
+This project's overall purpose is to build an autonomous, mobile gateway that will collect and process data from sensors that are installed in the field. 
 
-Setup:
+The drone will be stationary at base station located at Winston Chung Hall, and then when it is time, it will follow a pre programmed route to the field, where it will collect
+data from the sensors, and send it back to the base station in real time. 
+
+This communication is possible due to the connection between 2 Raspberry Pi devices, which communicate between each other, one receiving data and one transmitting. 
+
+The LoRaWAN sensors will send the signals and data from the sensors to the Raspberry Pi, which will decode it and send it to the other Raspberry Pi, which is the lab gateway 
+
+In future developments, this project will be fully autonomous and operational. 
