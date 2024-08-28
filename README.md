@@ -9,10 +9,10 @@ In modern agriculture, sensor-based monitoring systems are essential for optimiz
 
 
 **Hardware List**
-(add links)
+
 - Raspberry Pi 5
-- SX1262 LoRa HAT
-- DJI Mini Pro 4 Drone
+- SX1262 LoRa HAT 850-915 
+- 3DR SOLO Drone
 - Portable Lightweight Battery
 - Velcro Straps for Mounting
 - GPIO Jumper Cables
