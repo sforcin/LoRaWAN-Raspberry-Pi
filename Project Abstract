@@ -1,5 +1,16 @@
-Improving Digital Agriculture with Drone-Based LoRaWAN System
+**Improving Digital Agriculture with Drone-Based LoRaWAN System** 
 Isabela Caroline Sforcin Alves, Mentor: Zhaowei Tan
 Department of Computer and Electrical Engineering, University of California, Riverside
 
-Sensor-based systems are popular in modern agriculture, allowing farmers to monitor their crops, reduce water waste, and improve growth rates and efficiency. Among them, LoRaWAN (Long Range Wide Area Network) has emerged as a new communication technology that enables such systems to have low power consumption and long-range coverage. In general, LoRaWAN systems include sensors deployed in the field, a stationary LoRaWAN gateway, and remote LoRaWAN servers for data processing. However, challenges arise with the current setup. Notably, the distance between the base station and the sensors and the potential non-line-of-sight could cause data loss, especially for larger farms. To address this problem, we envision empowering such systems with drones. A mobile gateway is installed on a drone and programmed to flexibly route over the field, receiving signals from sensors at the best location. So far, we have successfully built a lightweight, mobile LoRaWAN Gateway with SX1262 LoRa HAT for Raspberry Pi and a Raspberry Pi 5. We have tested and validated that it can correctly communicate with commercial-off-the-shelf LoRaWAN sensors. We are currently experimenting on how to securely mount it onto the DJI Mini Pro 4 drone. After this is done, the final step is to program the drone for a designated route that is capable of flying close to the on-field sensors for end-to-end data collection and processing.
+Sensor-based systems are popular in modern agriculture, allowing farmers to monitor their crops, reduce water waste,
+and improve growth rates and efficiency. Among them, LoRaWAN (Long Range Wide Area Network) has emerged as a new 
+communication technology that enables such systems to have low power consumption and long-range coverage. In general, 
+LoRaWAN systems include sensors deployed in the field, a stationary LoRaWAN gateway, and remote LoRaWAN servers for 
+data processing. However, challenges arise with the current setup. Notably, the distance between the base station and 
+the sensors and the potential non-line-of-sight could cause data loss, especially for larger farms. To address this 
+problem, we envision empowering such systems with drones. A mobile gateway is installed on a drone and programmed to 
+flexibly route over the field, receiving signals from sensors at the best location. So far, we have successfully built
+a lightweight, mobile LoRaWAN Gateway with SX1262 LoRa HAT for Raspberry Pi and a Raspberry Pi 5. We have tested and
+validated that it can correctly communicate with commercial-off-the-shelf LoRaWAN sensors. We are currently experimenting
+on how to securely mount it onto the DJI Mini Pro 4 drone. After this is done, the final step is to program the drone 
+for a designated route that is capable of flying close to the on-field sensors for end-to-end data collection and processing.
