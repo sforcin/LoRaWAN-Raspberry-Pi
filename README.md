@@ -54,3 +54,18 @@ Attach the SX1262 LoRa HAT onto the Raspberry Pi GPIO pins as per the manufactur
 
 
 
+**This project is still in development, the following progress has been made:**
+- We have built the gateway, and registered it in The Things Network
+- We have built the system using the sensors, which are deployed on the field.
+- We have mounted the system on the drone, and attempted to fly it.
+
+**The Following are issues/ complications we are currently facing:**
+- Drone cannot fly when having the antenna or the battery mounted, we are getting the error "Magnetic interference"
+- Gateway is not successfully receiving data from the drone, which is difficult to fix due to the lack of documentation about the topic
+- Gateway is connected to TTN, but for some reason not running demo python scripts.
+
+* We will continue working on this during the 2024- 2025 school year, and will keep this document up to date with any newer information.
+
+
+
+
