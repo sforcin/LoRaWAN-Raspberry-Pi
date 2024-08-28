@@ -63,6 +63,7 @@ Attach the SX1262 LoRa HAT onto the Raspberry Pi GPIO pins as per the manufactur
 - Drone cannot fly when having the antenna or the battery mounted, we are getting the error "Magnetic interference"
 - Gateway is not successfully receiving data from the drone, which is difficult to fix due to the lack of documentation about the topic
 - Gateway is connected to TTN, but for some reason not running demo python scripts.
+- Raspberry Pi no longer supports GPIO configurations, therefore we are currently changing all files to LPIO instead.
 
 * We will continue working on this during the 2024- 2025 school year, and will keep this document up to date with any newer information.
 
