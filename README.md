@@ -27,7 +27,8 @@ In modern agriculture, sensor-based monitoring systems are essential for optimiz
 **Setup Instructions**
 
 Step 1: Raspberry Pi Setup
-Flash the Raspberry Pi OS onto the microSD card using Raspberry Pi Imager (add link)
+
+Flash the Raspberry Pi OS onto the microSD card using Raspberry Pi Imager 
   - If you are going to use an adapter for the microSD, make sure you are installing the OS on the microSD, not the adapter. 
   - When downloading the Raspberry Pi OS, make sure you enable ssh, and choose easy login and password.
   - Also, just download the recommended OS. 
