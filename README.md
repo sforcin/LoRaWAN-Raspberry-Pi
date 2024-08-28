@@ -52,6 +52,11 @@ Attach the SX1262 LoRa HAT onto the Raspberry Pi GPIO pins as per the manufactur
   - Connect the jumper cables to ensure stable communication between the Pi and the HAT.
   - If the light on the module is blinking, or solid red, it means the module was successfully connected.
 
+*
+*
+*
+*
+*
 
 
 **This project is still in development, the following progress has been made:**
