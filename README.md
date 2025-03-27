@@ -73,6 +73,10 @@ Attach the SX1262 LoRa HAT onto the Raspberry Pi GPIO pins as per the manufactur
 
 * We will continue working on this during the 2024- 2025 school year, and will keep this document up to date with any newer information.
 
+* New Update:
+
+* - We are now using the SAMD21 Pro LoRa chip, together with a Arduino. This will be updated in its folder, with more information and updates on the progress
+
 
 
 
