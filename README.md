@@ -1,82 +1,101 @@
-# LoRaWAN-Raspberry-Pi
-This repository contains the project specifications and setup instructions for building a mobile LoRaWAN Gateway using a Raspberry Pi 5 and an SX1262 LoRa HAT. This gateway is mounted on a 3DR SOLO drone to collect data from LoRa-enabled sensors across large agricultural fields.
+# USDA Drone-Mounted LoRaWAN Gateway Research
 
-This project is part of the USDA Digital Agriculture Fellowship, in collaboration with the University of California, Riverside, Department of Electrical and Computer Engineering.
+> **Project under the USDA Digital Agriculture Fellowship - University of California, Riverside (Department of Electrical and Computer Engineering)**
 
-**Project Overview**
+---
 
-In modern agriculture, sensor-based monitoring systems are essential for optimizing water usage, improving crop growth, and increasing efficiency. However, traditional LoRaWAN setups rely on stationary gateways, which can result in data loss over long distances or in non-line-of-sight conditions. To address this, we have developed a mobile LoRaWAN gateway mounted on a drone, allowing dynamic positioning to ensure reliable data collection from sensors over vast areas. This system offers better coverage, reduces data loss, and can significantly improve the scalability of IoT deployments in agriculture.
+## 🔭 Project Vision
 
+The objective of this research project is to develop a mobile, drone-mounted LoRaWAN gateway that autonomously collects data from distributed LoRa-enabled sensors in agricultural fields and relays this data to cloud platforms for further analysis.
 
-**Hardware List**
+By combining autonomous flight with long-range low-power communication (LoRa), this system aims to address the challenges of data loss in traditional static gateways, improve data collection efficiency, and increase the scalability of IoT deployments in precision agriculture.
 
-- Raspberry Pi 5
-- SX1262 LoRa HAT 850-915 
-- 3DR SOLO Drone
-- Portable Lightweight Battery
-- Velcro Straps for Mounting
-- GPIO Jumper Cables
-- SE01-LS and SDI-12-LS Soil Moisture Sensors (for testing)
-- Ethernet Cable
-- The following are **optional**, in case you want to use a monitor with keyboard and mouse
-- Raspberry PI HDMI Adapter for HDMI
-- HDMI Cable
-- Keyboard and mouse
+---
 
+## 🌾 Project Overview
 
-**Setup Instructions**
+In modern agriculture, real-time environmental data is essential for optimizing water usage, improving crop growth, and enhancing sustainability. Traditional LoRaWAN networks rely on stationary gateways, but these can suffer from:
 
-Step 1: Raspberry Pi Setup
+- Line-of-sight issues
+- Terrain obstructions
+- Limited coverage in large fields
 
-Flash the Raspberry Pi OS onto the microSD card using Raspberry Pi Imager 
-  - If you are going to use an adapter for the microSD, make sure you are installing the OS on the microSD, not the adapter. 
-  - When downloading the Raspberry Pi OS, make sure you enable ssh, and choose easy login and password.
-  - Also, just download the recommended OS. 
-Insert the microSD card into the Raspberry Pi and power it up, connect 
-  - It is recommended to use a power outlet, instead of connecting it to a computer or a phone.
-Connect to the Raspberry Pi via SSH:
-  - If you have admin access to your router, you could login and find the IP address of the Raspberry pi, or:
-  - Download Angry IP Scanner on a computer, and run IP scan to find all devices connected to your network.
-  - After finding the IP address of the Raspberry Pi, copy that.
-  - Open your terminal, and run the command ssh [username]@IP_ADDRESS
-  - Type your password, press enter. You should see your username in green if successfully connected
-Install the required libraries for LoRa communication:
-```bash
-sudo apt update
-sudo apt install python3-pip
-pip3 install lora-python-lib
-```
+Our system utilizes a drone-mounted LoRaWAN gateway capable of dynamically positioning itself over sensor nodes to maximize communication range and minimize data loss. After collection, data is transmitted to a base station and uploaded to The Things Network (TTN) for cloud-based processing and analysis.
 
-Step 2: LoRa HAT Setup
-Attach the SX1262 LoRa HAT onto the Raspberry Pi GPIO pins as per the manufacturer's documentation.
-  - In my case, I attached the LoRa using jumper cables (female to male), but maybe it is different for your model of the module.
-  - Connect the jumper cables to ensure stable communication between the Pi and the HAT.
-  - If the light on the module is blinking, or solid red, it means the module was successfully connected.
+---
 
-*
-*
-*
-*
-*
+## ⚙️ System Components
 
+### Hardware
 
-**This project is still in development, the following progress has been made:**
-- We have built the gateway, and registered it in The Things Network
-- We have built the system using the sensors, which are deployed on the field.
-- We have mounted the system on the drone, and attempted to fly it.
+- **Mobile Gateway (Drone-Based)**
+  - 3DR SOLO Drone (modified)
+  - Raspberry Pi 5
+  - SX1262 LoRa HAT (850-915 MHz)
+  - Portable battery system
+  - Lightweight custom mounting system
+  - Soil moisture sensors (SE01-LS, SDI-12-LS for testing)
 
-**The Following are issues/ complications we are currently facing:**
-- Drone cannot fly when having the antenna or the battery mounted, we are getting the error "Magnetic interference"
-- Gateway is not successfully receiving data from the drone, which is difficult to fix due to the lack of documentation about the topic
-- Gateway is connected to TTN, but for some reason not running demo python scripts.
-- Raspberry Pi no longer supports GPIO configurations, therefore we are currently changing all files to LPIO instead.
+- **Alternative Hardware Setups**
+  - Arduino + SX1262 module (alternative configuration)
+  - SparkFun SAMD21 Pro RF (alternative MCU-based solution)
 
-* We will continue working on this during the 2024- 2025 school year, and will keep this document up to date with any newer information.
+- **Ground Base Station**
+  - Receives data from drone gateway
+  - Acts as intermediary to The Things Network
 
-* New Update:
+- **Cloud Platform**
+  - The Things Network (TTN) integration for real-time data upload
 
-* - We are now using the SAMD21 Pro LoRa chip, together with a Arduino. This will be updated in its folder, with more information and updates on the progress
+---
 
+## 🚧 Current Progress
 
+- ✅ Developed multiple hardware configurations for LoRaWAN gateway:
+  - Raspberry Pi 5 with SX1262 LoRa HAT
+  - Arduino with SX1262 modules
+  - SparkFun SAMD21 Pro RF with J-Link debugger
+- ✅ Configured Raspberry Pi OS for remote SSH access and development.
+- ✅ Mounted hardware on 3DR SOLO drone.
+- ✅ Registered gateway with The Things Network.
+- ✅ Developed initial Python LoRa communication scripts.
+- ✅ Started transition to LPIO GPIO libraries for Raspberry Pi 5 compatibility.
+- ✅ Conducted initial field testing of drone-mounted system.
+- ✅ Integrated and tested soil moisture sensors.
+- ✅ Documented hardware setups and wiring for all configurations.
 
+---
+
+## 🐞 Current Technical Challenges
+
+- Magnetic interference errors when mounting antennas and batteries on drone.
+- Inconsistent TTN packet reception due to limited documentation.
+- Raspberry Pi 5 GPIO deprecated — requiring GPIO software adaptation.
+- SAMD21 bootloader recovery and SWD debugging required via J-Link.
+- Live packet capture and field deployment tests still under ongoing development.
+
+---
+
+## 📁 Repository Structure
+
+- `/Hardware/` – Detailed hardware setups for Raspberry Pi, Arduino, and SparkFun SAMD21 configurations.
+- `/Firmware/` – Code for Raspberry Pi (Python), Arduino, and SAMD21 boards.
+- `/System_Design/` – Diagrams of system architecture, deployment flow, and data pipeline.
+- `/Field_Tests/` – Drone flight tests, signal strength logs, and deployment notes.
+- `/Documentation/` – USDA progress reports, references, and technical notes.
+- `/Challenges_and_Debugging/` – Full logs of technical obstacles encountered and solutions.
+
+---
+
+## 📅 Next Steps (2024-2025)
+
+- Finalize stable drone-mounted flight profile with reduced interference.
+- Complete transition to LPIO for Raspberry Pi GPIO support.
+- Expand TTN integration for consistent cloud data upload.
+- Begin full-scale field testing for multi-node deployment.
+- Build real-time data visualization tools for research.
+
+---
+
+> **This repository is a living document and will be continuously updated as the project progresses.**
 
