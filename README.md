@@ -4,7 +4,7 @@
 
 ---
 
-## 🔭 Project Vision
+##  Project Vision
 
 The objective of this research project is to develop a mobile, drone-mounted LoRaWAN gateway that autonomously collects data from distributed LoRa-enabled sensors in agricultural fields and relays this data to cloud platforms for further analysis.
 
@@ -12,7 +12,7 @@ By combining autonomous flight with long-range low-power communication (LoRa), t
 
 ---
 
-## 🌾 Project Overview
+## Project Overview
 
 In modern agriculture, real-time environmental data is essential for optimizing water usage, improving crop growth, and enhancing sustainability. Traditional LoRaWAN networks rely on stationary gateways, but these can suffer from:
 
@@ -24,7 +24,7 @@ Our system utilizes a drone-mounted LoRaWAN gateway capable of dynamically posit
 
 ---
 
-## ⚙️ System Components
+##  System Components
 
 ### Hardware
 
@@ -51,30 +51,12 @@ Our system utilizes a drone-mounted LoRaWAN gateway capable of dynamically posit
 
 ## 🚧 Current Progress
 
-- ✅ Developed multiple hardware configurations for LoRaWAN gateway:
-  - Raspberry Pi 5 with SX1262 LoRa HAT
-  - Arduino with SX1262 modules
-  - SparkFun SAMD21 Pro RF with J-Link debugger
-- ✅ Configured Raspberry Pi OS for remote SSH access and development.
-- ✅ Mounted hardware on 3DR SOLO drone.
-- ✅ Registered gateway with The Things Network.
-- ✅ Developed initial Python LoRa communication scripts.
-- ✅ Started transition to LPIO GPIO libraries for Raspberry Pi 5 compatibility.
-- ✅ Conducted initial field testing of drone-mounted system.
-- ✅ Integrated and tested soil moisture sensors.
-- ✅ Documented hardware setups and wiring for all configurations.
 
 ---
 
 ## 🐞 Current Technical Challenges
 
-- Magnetic interference errors when mounting antennas and batteries on drone.
-- Inconsistent TTN packet reception due to limited documentation.
-- Raspberry Pi 5 GPIO deprecated — requiring GPIO software adaptation.
-- SAMD21 bootloader recovery and SWD debugging required via J-Link.
-- Live packet capture and field deployment tests still under ongoing development.
 
----
 
 ## 📁 Repository Structure
 
@@ -87,14 +69,7 @@ Our system utilizes a drone-mounted LoRaWAN gateway capable of dynamically posit
 
 ---
 
-## 📅 Next Steps (2024-2025)
-
-- Finalize stable drone-mounted flight profile with reduced interference.
-- Complete transition to LPIO for Raspberry Pi GPIO support.
-- Expand TTN integration for consistent cloud data upload.
-- Begin full-scale field testing for multi-node deployment.
-- Build real-time data visualization tools for research.
-
+## 📅 Next Steps 
 ---
 
 > **This repository is a living document and will be continuously updated as the project progresses.**
