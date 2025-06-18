@@ -49,27 +49,24 @@ Our system utilizes a drone-mounted LoRaWAN gateway capable of dynamically posit
 
 ---
 
-## 🚧 Current Progress
-
+##  Current Progress
+I was able to make my setup work with the Sparkfun Pro RF, and while flashing arduino code with it, receive messages that the node is transmitting and receiving signals successfully
 
 ---
 
-## 🐞 Current Technical Challenges
+##  Current Technical Challenges
+Despite the challenge of making the gateway work with the power supply due to interference,we also need to ensure the drone collects all the data needed
 
 
-
-## 📁 Repository Structure
-
-- `/Hardware/` – Detailed hardware setups for Raspberry Pi, Arduino, and SparkFun SAMD21 configurations.
-- `/Firmware/` – Code for Raspberry Pi (Python), Arduino, and SAMD21 boards.
-- `/System_Design/` – Diagrams of system architecture, deployment flow, and data pipeline.
-- `/Field_Tests/` – Drone flight tests, signal strength logs, and deployment notes.
-- `/Documentation/` – USDA progress reports, references, and technical notes.
-- `/Challenges_and_Debugging/` – Full logs of technical obstacles encountered and solutions.
 
 ---
 
 ## 📅 Next Steps 
+- Test the setup with real sensors on the field
+- Connect all the sensors into a network of sensors using TTN
+- Once the network of sensors is created, run tests to make sure the data is being collected properly
+- Write algorithms to process data and create graphs from it
+- Improve data packet transfers if needed
 ---
 
 > **This repository is a living document and will be continuously updated as the project progresses.**
