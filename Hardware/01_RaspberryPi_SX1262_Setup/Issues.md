@@ -1,61 +1,91 @@
-# SX1262 LoRa Module → Raspberry Pi 5 Wiring Guide
+# ⚠️ SX1262 Issues + Troubleshooting
 
-This guide covers the **hardware setup**, **pin mapping**, and **software dependencies** for connecting an **SX1262 LoRa module** to a **Raspberry Pi 5**. This configuration turns your Pi into a mobile LoRaWAN gateway or sensor node.
-
----
-
-##  Hardware Required
-
-| Component | Details |
-|----------|---------|
-| Raspberry Pi 5 | Any model with 40-pin GPIO (Pi 3/4 also work) |
-| SX1262 Module | e.g., [Waveshare SX1262 LoRa HAT](https://www.waveshare.com/wiki/SX1262_LoRa_HAT) |
-| Jumper Wires | Female-to-female |
-| Optional: Breadboard | For prototyping convenience |
+This document outlines common issues encountered when working with the SX1262 LoRa module (especially in Raspberry Pi and Arduino/SAMD21 setups), and how to fix them.
 
 ---
 
-##  Power Notes
+## Issues I have faced, and how I attempted to solve them
 
-- The SX1262 operates at **3.3V**.
-- DO NOT connect to 5V — this may damage the LoRa module.
-- The Pi 5 has a dedicated **3.3V rail** on Pin 1 or Pin 17.
+###  **SX1262 init failed**
 
----
+**Cause:**  
+The module cannot initialize — usually due to incorrect wiring or missing control pins.
 
-## 🧠 Wiring Table (SX1262 ↔ Raspberry Pi 5)
-
-| SX1262 Pin | Pi GPIO Pin | BCM Pin | Notes |
-|------------|-------------|---------|-------|
-| **VCC**    | Pin 1       | 3.3V    | Power input |
-| **GND**    | Pin 6       | GND     | Ground |
-| **SCK**    | Pin 23      | GPIO11  | SPI Clock |
-| **MISO**   | Pin 21      | GPIO9   | SPI MISO |
-| **MOSI**   | Pin 19      | GPIO10  | SPI MOSI |
-| **NSS**    | Pin 24      | GPIO8   | Chip Select (CE0) |
-| **RESET**  | Pin 15      | GPIO22  | Required |
-| **BUSY**   | Pin 13      | GPIO27  | Required |
-| **DIO1**   | Pin 16      | GPIO23  | Interrupt pin |
-
-> ⚠️ Use consistent 3.3V logic level — **no level shifters needed** between Pi and SX1262.
+**Fix:**
+- Double-check `RESET`, `BUSY`, and `DIO1` pins are connected to GPIOs.
+- Ensure you're using **3.3V** (not 5V).
+- NSS (chip select) must be properly defined in code.
+- If using BeeGee’s library: confirm correct pin config via `setPins()`.
+- Make sure you are using the correct frequency (915 Hz for USA)
+- Double check wiring diagram for raspberry pi and chip
 
 ---
 
-## GPIO Pinout Reference
+###  2. **No packets received / RX always empty**
 
-```plaintext
-Pi 5 GPIO (top view)
+**Cause:**  
+Receiver is initialized but never detects incoming LoRa packets.
 
-(3.3V) 1  ● ● 2  (5V)
-(GPIO2) 3  ● ● 4  (5V)
-(GPIO3) 5  ● ● 6  GND
-(GPIO4) 7  ● ● 8  (GPIO14)
-( GND ) 9  ● ● 10 (GPIO15)
-(GPIO17)11 ● ● 12 (GPIO18)
-(GPIO27)13 ● ● 14 GND
-(GPIO22)15 ● ● 16 (GPIO23)
-(3.3V)17 ● ● 18 (GPIO24)
-(GPIO10)19 ● ● 20 GND
-(GPIO9) 21 ● ● 22 (GPIO25)
-(GPIO11)23 ● ● 24 (GPIO8)
-( GND )25 ● ● 26 (GPIO7)
+**Fix:**
+- Ensure both sender and receiver use **the same frequency** (e.g., 915 MHz).
+- Check spreading factor, bandwidth, and coding rate match on both ends.
+- Use an **antenna** — SX1262 performs poorly without one.
+- Confirm `DIO1` is wired correctly (used for RX_DONE interrupt).
+- Connect Antenna to Raspberry Pi
+- Write debugging code in receiver.py code to output frequencies it's checking, and what is going on under the hood
+- # These helped me realize that my code was actually looking for the frequencies, but that was not where the issue was
+
+---
+
+###  3. **SPI hangs / timeout / busy stuck**
+
+**Cause:**  
+The `BUSY` pin is not responding correctly.
+
+**Fix:**
+- `BUSY` must be wired and declared in the code.
+- Never omit `BUSY` or the device will hang on SPI commands.
+- Check with a logic analyzer or serial print if the system halts at `begin()`.
+- i was not able to fix this issue in my setup, so these are tentative !
+
+---
+
+###  4. **Continuous RESET loop / crashing**
+
+**Cause:**  
+Improper voltage levels or excessive draw from Pi.
+
+**Fix:**
+- Use external regulated 3.3V power if needed.
+- Use short jumper wires to minimize voltage drop.
+- Ensure RESET pin is not floating — tie it to a GPIO and pull HIGH at setup.
+
+---
+
+
+## 🧪 Debug Tips
+
+| Tool | Purpose |
+|------|---------|
+| Serial Monitor | Check output for “init failed” or packet logs |
+| `digitalRead()` | Verify `BUSY`, `RESET`, `DIO1` logic levels |
+| Logic Analyzer | Track SPI transactions |
+| Multimeter | Confirm 3.3V power rail on VCC |
+
+---
+
+## Debugging Toolkit
+
+- [ ] SPI enabled (Raspberry Pi: `raspi-config`)
+- [ ] 3.3V power supply confirmed
+- [ ] RESET, BUSY, DIO1 wired
+- [ ] SPI (MOSI/MISO/SCK/NSS) connected properly
+- [ ] Antenna connected
+- [ ] Frequency matches other LoRa nodes (915 MHz)
+- [ ] Library used: [SX126x-Arduino](https://github.com/beegee-tokyo/SX126x-Arduino)
+
+---
+
+For deeper debugging, refer to:  
+📚 [BeeGee SX126x-Arduino Issues](https://github.com/beegee-tokyo/SX126x-Arduino/issues)
+
