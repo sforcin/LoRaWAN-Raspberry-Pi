@@ -33,7 +33,7 @@ Receiver is initialized but never detects incoming LoRa packets.
 - Confirm `DIO1` is wired correctly (used for RX_DONE interrupt).
 - Connect Antenna to Raspberry Pi
 - Write debugging code in receiver.py code to output frequencies it's checking, and what is going on under the hood
-- # These helped me realize that my code was actually looking for the frequencies, but that was not where the issue was
+- * These helped me realize that my code was actually looking for the frequencies, but that was not where the issue was
 
 ---
 
