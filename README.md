@@ -61,7 +61,7 @@ Despite the challenge of making the gateway work with the power supply due to in
 
 ---
 
-## 📅 Next Steps 
+## Next Steps 
 - Test the setup with real sensors on the field
 - Connect all the sensors into a network of sensors using TTN
 - Once the network of sensors is created, run tests to make sure the data is being collected properly
