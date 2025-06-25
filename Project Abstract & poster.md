@@ -15,3 +15,6 @@ a lightweight, mobile LoRaWAN Gateway with SX1262 LoRa HAT for Raspberry Pi and 
 validated that it can correctly communicate with commercial-off-the-shelf LoRaWAN sensors. We are currently experimenting
 on how to securely mount it onto the DJI Mini Pro 4 drone. After this is done, the final step is to program the drone 
 for a designated route that is capable of flying close to the on-field sensors for end-to-end data collection and processing.
+
+
+Project poster: https://docs.google.com/presentation/d/1lV0XdZntMBJIeyhkOkUgVXbCmX-OM1LToo6gtHTJpjw/edit?usp=sharing
