@@ -1,3 +1,4 @@
+# Project Goals on a High Level
 This project's overall purpose is to build an autonomous, mobile gateway that will collect and process data from sensors that are installed in the field. 
 
 The drone will be stationary at base station located at Winston Chung Hall, and then when it is time, it will follow a pre programmed route to the field, where it will collect
