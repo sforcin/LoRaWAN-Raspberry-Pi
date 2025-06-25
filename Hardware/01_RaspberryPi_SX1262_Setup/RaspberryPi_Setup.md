@@ -23,7 +23,7 @@ This guide covers the **hardware setup**, **pin mapping**, and **software depend
 
 ---
 
-## 🧠 Wiring Table (SX1262 ↔ Raspberry Pi 5)
+##  Wiring Table (SX1262 ↔ Raspberry Pi 5)
 
 | SX1262 Pin | Pi GPIO Pin | BCM Pin | Notes |
 |------------|-------------|---------|-------|
@@ -37,7 +37,7 @@ This guide covers the **hardware setup**, **pin mapping**, and **software depend
 | **BUSY**   | Pin 13      | GPIO27  | Required |
 | **DIO1**   | Pin 16      | GPIO23  | Interrupt pin |
 
-> ⚠️ Use consistent 3.3V logic level — **no level shifters needed** between Pi and SX1262.
+> Use consistent 3.3V logic level — **no level shifters needed** between Pi and SX1262.
 
 ---
 
