@@ -1,5 +1,6 @@
 ## Improving Digital Agriculture with Drone-Based LoRaWAN System
 > Isabela Caroline Sforcin Alves, Mentor: Zhaowei Tan
+>
 > Department of Computer and Electrical Engineering, University of California, Riverside
 
 Sensor-based systems are popular in modern agriculture, allowing farmers to monitor their crops, reduce water waste,
