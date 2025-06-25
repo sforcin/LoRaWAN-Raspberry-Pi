@@ -56,9 +56,8 @@ How to Recover from Bootloader Lock
 1. Requires: [SEGGER J-Link EDU Mini](https://www.segger.com/products/debug-probes/j-link/models/j-link-edu-mini/)
 2. Connect SWDIO, SWCLK, GND, and VREF to the J-Link header
 3. Use SEGGER J-Flash or `openocd` to re-flash the SparkFun bootloader
+4. You can download the software for the debugger in the official website of Segger, and use the given source codes from there as well.
 
-> Download bootloader here:  
->  [SparkFun SAMD21 Pro RF GitHub - Bootloader](https://github.com/sparkfun/Arduino_Boards/tree/main/sparkfun/samd/bootloaders)
 * Notes:
 -    if you do this, make sure it is only for educational purposes. The debugger CANNOT be used for industrial or professional purposes
 -    Also, make sure you have a stable connection between the jumper wires is secure, you may also solder if you know how to
