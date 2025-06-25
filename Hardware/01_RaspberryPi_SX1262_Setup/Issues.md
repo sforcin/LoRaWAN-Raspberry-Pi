@@ -1,4 +1,4 @@
-# ⚠️ SX1262 Issues + Troubleshooting
+#  SX1262 Issues + Troubleshooting
 
 This document outlines common issues encountered when working with the SX1262 LoRa module (especially in Raspberry Pi and Arduino/SAMD21 setups), and how to fix them.
 
