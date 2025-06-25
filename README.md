@@ -55,7 +55,7 @@ I was able to make my setup work with the Sparkfun Pro RF, and while flashing ar
 ---
 
 ##  Current Technical Challenges
-Despite the challenge of making the gateway work with the power supply due to interference,we also need to ensure the drone collects all the data needed
+Despite the challenge of making the gateway work with the power supply due to interference,we also need to ensure the drone collects all the data needed. I have files with specific issues and debugging options for both setups I attempted for this system.
 
 
 
