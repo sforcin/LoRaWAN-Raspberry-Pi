@@ -46,7 +46,8 @@ How to Recover from Bootloader Lock
    - Re-select the **new COM port** that appears
    - Re-upload your sketch
   
-  * This did not work with mine. if you do this, ensure you are only clicking the reset button once, and that the board is still functional after, if it is not, you must proceed to option 2
+  * This did not work with mine. if you do this, ensure that the board is still functional after, if it is not, you must proceed to option 2
+  * This option was suggested in many sources for debugging this board. I am not totally sure why this bug happens, but this debugging option did not work for me in the 2 times I attempted to debug my system
 
 ---
 
