@@ -18,7 +18,7 @@ This guide covers the **hardware setup**, **pin mapping**, and **software depend
 ##  Power Notes
 
 - The SX1262 operates at **3.3V**.
-- DO NOT connect to 5V — this may damage the LoRa module.
+- DO NOT connect to 5V — this may damage the LoRa module (Which has happened in this project)
 - The Pi 5 has a dedicated **3.3V rail** on Pin 1 or Pin 17.
 
 ---
