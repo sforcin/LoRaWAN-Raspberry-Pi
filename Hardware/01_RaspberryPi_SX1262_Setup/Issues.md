@@ -15,7 +15,6 @@ The module cannot initialize — usually due to incorrect wiring or missing cont
 - Double-check `RESET`, `BUSY`, and `DIO1` pins are connected to GPIOs.
 - Ensure you're using **3.3V** (not 5V).
 - NSS (chip select) must be properly defined in code.
-- If using BeeGee’s library: confirm correct pin config via `setPins()`.
 - Make sure you are using the correct frequency (915 Hz for USA)
 - Double check wiring diagram for raspberry pi and chip
 
@@ -63,7 +62,7 @@ Improper voltage levels or excessive draw from Pi.
 ---
 
 
-## 🧪 Debug Tips
+##  Debug Tips
 
 | Tool | Purpose |
 |------|---------|
@@ -87,5 +86,5 @@ Improper voltage levels or excessive draw from Pi.
 ---
 
 For deeper debugging, refer to:  
-📚 [BeeGee SX126x-Arduino Issues](https://github.com/beegee-tokyo/SX126x-Arduino/issues)
+ [BeeGee SX126x-Arduino Issues](https://github.com/beegee-tokyo/SX126x-Arduino/issues)
 
