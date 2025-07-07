@@ -67,7 +67,12 @@ Despite the challenge of making the gateway work with the power supply due to in
 - Once the network of sensors is created, run tests to make sure the data is being collected properly
 - Write algorithms to process data and create graphs from it
 - Improve data packet transfers if needed
+
 ---
+
+## Project Conclusion
+- As a latest update, I attempted to recover the SAMD21 using the debugger, but something went wrong along the process.
+- I have uploaded all code I found and used in order to attempt this project.
 
 > **This repository is a living document and will be continuously updated as the project progresses.**
 
